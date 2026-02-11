@@ -66,8 +66,8 @@ If not provided, ask for:
 
 **Related Files:**
 
-- Entity: `custom_components/ha_integration_domain/[platform]/[entity_name].py`
-- Platform: `custom_components/ha_integration_domain/[platform]/__init__.py`
+- Entity: `custom_components/alexa_configurator/[platform]/[entity_name].py`
+- Platform: `custom_components/alexa_configurator/[platform]/__init__.py`
 - Device Info Helper: `entity_utils/device_info.py`
 - Translations: `translations/*.json`
 - Documentation: Reference [#file:docs/development/ARCHITECTURE.md]

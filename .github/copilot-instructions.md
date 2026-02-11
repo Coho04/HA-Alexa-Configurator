@@ -12,8 +12,8 @@ This file provides specific guidance for GitHub Copilot when generating code for
 
 This integration:
 
-- **Domain:** `ha_integration_domain`
-- **Title:** Integration Blueprint
+- **Domain:** `alexa_configurator`
+- **Title:** Alexa Configurator
 - **Class prefix:** `IntegrationBlueprint`
 
 Use these exact identifiers throughout the codebase. Never hardcode different values.
@@ -138,7 +138,7 @@ pkill -f "hass --config" || true && pkill -f "debugpy.*5678" || true && ./script
 
 - Live: Terminal where `./script/develop` runs
 - File: `config/home-assistant.log` (most recent), `config/home-assistant.log.1` (previous)
-- Adjust log level: `custom_components.ha_integration_domain: debug` in `config/configuration.yaml`
+- Adjust log level: `custom_components.alexa_configurator: debug` in `config/configuration.yaml`
 
 ## Working With the Developer
 

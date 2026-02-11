@@ -8,13 +8,13 @@ This is a Home Assistant custom integration that was generated from a blueprint 
 
 **Integration details:**
 
-- **Domain:** `ha_integration_domain`
-- **Title:** Integration Blueprint
+- **Domain:** `alexa_configurator`
+- **Title:** Alexa Configurator
 - **Repository:** jpawlowski/hacs.integration_blueprint
 
 **Key directories:**
 
-- `custom_components/ha_integration_domain/` - Main integration code
+- `custom_components/alexa_configurator/` - Main integration code
 - `config/` - Home Assistant configuration for local testing
 - `tests/` - Unit and integration tests
 - `script/` - Development and validation scripts
@@ -36,7 +36,7 @@ Test the integration using `./script/develop`. Important:
 
 **Adjusting log levels:**
 
-- Integration logs: `custom_components.ha_integration_domain: debug` in `config/configuration.yaml`
+- Integration logs: `custom_components.alexa_configurator: debug` in `config/configuration.yaml`
 - You can modify log levels when debugging - just restart HA after changes
 
 **Context-specific instructions:**
@@ -163,15 +163,15 @@ As an AI agent, **aim for Silver or Gold Quality Scale** when generating code:
 
 This integration uses the following identifiers consistently:
 
-- **Domain:** `ha_integration_domain`
-- **Title:** Integration Blueprint
+- **Domain:** `alexa_configurator`
+- **Title:** Alexa Configurator
 - **Class prefix:** `IntegrationBlueprint`
 
 **When creating new files:**
 
-- Use the domain `ha_integration_domain` for all DOMAIN references
+- Use the domain `alexa_configurator` for all DOMAIN references
 - Prefix all integration-specific classes with `IntegrationBlueprint`
-- Use "Integration Blueprint" as the display title
+- Use "Alexa Configurator" as the display title
 - Never hardcode different values
 
 ### Integration Structure
@@ -436,7 +436,7 @@ See `.github/instructions/python.instructions.md` for linter overrides and error
 
 **Test structure:**
 
-- `tests/` mirrors `custom_components/ha_integration_domain/` structure
+- `tests/` mirrors `custom_components/alexa_configurator/` structure
 - Use fixtures for common setup (Home Assistant mock, coordinator, etc.)
 - Mock external API calls
 

@@ -132,8 +132,8 @@ Break down into logical phases (typically 3-5):
 
 **Integration-specific considerations:**
 
-- Domain: `ha_integration_domain`
-- Title: Integration Blueprint
+- Domain: `alexa_configurator`
+- Title: Alexa Configurator
 - Class prefix: `IntegrationBlueprint`
 - Follow patterns in `AGENTS.md` and path-specific `.instructions.md`
 
@@ -144,8 +144,8 @@ Break down into logical phases (typically 3-5):
 
 **Files to modify:**
 
-- `custom_components/ha_integration_domain/sensor/__init__.py`
-- `custom_components/ha_integration_domain/sensor/new_sensor.py` (create)
+- `custom_components/alexa_configurator/sensor/__init__.py`
+- `custom_components/alexa_configurator/sensor/new_sensor.py` (create)
 
 **Changes:**
 

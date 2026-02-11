@@ -1,4 +1,4 @@
-# Integration Blueprint
+# Alexa Configurator
 
 [![GitHub Release][releases-shield]][releases]
 [![GitHub Activity][commits-shield]][commits]
@@ -70,7 +70,7 @@ Then:
 
 If you prefer not to use HACS:
 
-1. Download the `custom_components/ha_integration_domain/` folder from this repository
+1. Download the `custom_components/alexa_configurator/` folder from this repository
 2. Copy it to your Home Assistant's `custom_components/` directory
 3. Restart Home Assistant
 
@@ -84,7 +84,7 @@ If you prefer not to use HACS:
 
 Click the button below to open the configuration dialog:
 
-[![Open your Home Assistant instance and start setting up a new integration.](https://my.home-assistant.io/badges/config_flow_start.svg)](https://my.home-assistant.io/redirect/config_flow_start/?domain=ha_integration_domain)
+[![Open your Home Assistant instance and start setting up a new integration.](https://my.home-assistant.io/badges/config_flow_start.svg)](https://my.home-assistant.io/redirect/config_flow_start/?domain=alexa_configurator)
 
 Follow the setup wizard:
 
@@ -98,7 +98,7 @@ That's it! The integration will start loading your data.
 
 1. Go to **Settings** → **Devices & Services**
 2. Click **"+ Add Integration"**
-3. Search for "Integration blueprint"
+3. Search for "Alexa Configurator"
 4. Follow the same setup steps as Option 1
 
 ### Step 3: Adjust Settings (Optional)
@@ -106,7 +106,7 @@ That's it! The integration will start loading your data.
 After setup, you can adjust options:
 
 1. Go to **Settings** → **Devices & Services**
-2. Find **Integration Blueprint**
+2. Find **Alexa Configurator**
 3. Click **Configure** to adjust:
    - Update interval (how often to refresh data)
    - Enable debug logging
@@ -125,7 +125,7 @@ The integration creates several entities for your air purifier:
 - **Button**: Reset filter timer
 - **Fan**: Air purifier fan control
 
-Find all entities in **Settings** → **Devices & Services** → **Integration Blueprint** → click on the device.
+Find all entities in **Settings** → **Devices & Services** → **Alexa Configurator** → click on the device.
 
 ## Available Entities
 
@@ -185,26 +185,26 @@ Find all entities in **Settings** → **Devices & Services** → **Integration B
 
 The integration provides services for advanced automation:
 
-### `ha_integration_domain.example_action`
+### `alexa_configurator.example_action`
 
 Perform a custom action (customize this for your needs).
 
 **Example:**
 
 ```yaml
-service: ha_integration_domain.example_action
+service: alexa_configurator.example_action
 data:
   # Add your parameters here
 ```
 
-### `ha_integration_domain.reload_data`
+### `alexa_configurator.reload_data`
 
 Manually refresh data from the API without waiting for the update interval.
 
 **Example:**
 
 ```yaml
-service: ha_integration_domain.reload_data
+service: alexa_configurator.reload_data
 ```
 
 Use these services in automations or scripts for more control.
@@ -248,7 +248,7 @@ The integration will automatically resume normal operation with the new credenti
 You can also update credentials at any time without waiting for an error:
 
 1. Go to **Settings** → **Devices & Services**
-2. Find **Integration Blueprint**
+2. Find **Alexa Configurator**
 3. Click the **3 dots menu** → **Reconfigure**
 4. Enter new username/password
 5. Click Submit
@@ -271,7 +271,7 @@ To enable debug logging for this integration, add the following to your `configu
 logger:
   default: info
   logs:
-    custom_components.ha_integration_domain: debug
+    custom_components.alexa_configurator: debug
 ```
 
 ### Common Issues
@@ -292,7 +292,7 @@ If your device is not responding:
 1. Check the **API Connection** binary sensor - it should be "On"
 2. Check your network connection
 3. Verify the device is powered on
-4. Check the integration diagnostics (Settings → Devices & Services → Integration blueprint → 3 dots → Download diagnostics)
+4. Check the integration diagnostics (Settings → Devices & Services → Alexa Configurator → 3 dots → Download diagnostics)
 
 ## 🤝 Contributing
 

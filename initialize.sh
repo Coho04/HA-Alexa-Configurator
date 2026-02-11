@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# initialize.sh - One-time setup script for HACS Integration Blueprint
+# initialize.sh - One-time setup script for HACS Alexa Configurator
 #
 # This script customizes the blueprint template with your integration details.
 # It will automatically delete itself after successful completion.
@@ -65,7 +65,7 @@ while [[ $# -gt 0 ]]; do
             ;;
         --help|-h)
             cat << EOF
-HACS Integration Blueprint - Initialization Script
+HACS Alexa Configurator - Initialization Script
 
 Usage:
   ./initialize.sh                                       Interactive mode
@@ -207,15 +207,15 @@ check_if_already_initialized() {
     local commit_count
 
     # Check 1: Is custom_components directory already customized?
-    if [[ -d "custom_components" ]] && [[ ! -d "custom_components/ha_integration_domain" ]]; then
+    if [[ -d "custom_components" ]] && [[ ! -d "custom_components/alexa_configurator" ]]; then
         # The template domain doesn't exist, so it's been renamed
         return 0  # Already initialized
     fi
 
     # Check 2: Does manifest.json have a different domain?
-    if [[ -f "custom_components/ha_integration_domain/manifest.json" ]]; then
-        current_domain=$(grep -o '"domain"[[:space:]]*:[[:space:]]*"[^"]*"' custom_components/ha_integration_domain/manifest.json | cut -d'"' -f4)
-        if [[ -n "$current_domain" ]] && [[ "$current_domain" != "ha_integration_domain" ]]; then
+    if [[ -f "custom_components/alexa_configurator/manifest.json" ]]; then
+        current_domain=$(grep -o '"domain"[[:space:]]*:[[:space:]]*"[^"]*"' custom_components/alexa_configurator/manifest.json | cut -d'"' -f4)
+        if [[ -n "$current_domain" ]] && [[ "$current_domain" != "alexa_configurator" ]]; then
             return 0  # Domain already changed
         fi
     fi
@@ -267,7 +267,7 @@ check_if_already_initialized() {
 
     # Check 4: Has README.md been customized? (template has specific header)
     if [[ -f "README.md" ]]; then
-        if ! grep -q "Home Assistant Integration Blueprint" README.md; then
+        if ! grep -q "Home Assistant Alexa Configurator" README.md; then
             return 0  # README customized, likely initialized
         fi
     fi
@@ -829,7 +829,7 @@ replace_in_files() {
         "./config/blueprints"            # HA blueprints
         "./config/custom_components/hacs" # HACS installation (not our integration)
         # Note: config/configuration.yaml is negated in gitignore, will be added back later
-        # Note: custom_components/ha_integration_domain/ is negated, will be added back later
+        # Note: custom_components/alexa_configurator/ is negated, will be added back later
     )
 
     # Additional file exclusions in config/ directory (runtime files, logs, databases)
@@ -915,7 +915,7 @@ replace_in_files() {
 
     # Add explicitly negated files from gitignore (files that should be included despite wildcards)
     # Example: config/* excludes everything, but !config/configuration.yaml brings it back
-    # Example: custom_components/* excludes all, but !custom_components/ha_integration_domain/ brings it back
+    # Example: custom_components/* excludes all, but !custom_components/alexa_configurator/ brings it back
     for negate in "${gitignore_negate[@]}"; do
         local negate_path="./${negate#./}"
 
@@ -1113,11 +1113,11 @@ show_statistics() {
 
 # Main execution
 main() {
-    local header_text="HACS Integration Blueprint - One-Time Setup"
+    local header_text="HACS Alexa Configurator - One-Time Setup"
     if $DRY_RUN; then
-        header_text="HACS Integration Blueprint - Dry-Run Mode 🔮"
+        header_text="HACS Alexa Configurator - Dry-Run Mode 🔮"
     elif $UNATTENDED; then
-        header_text="HACS Integration Blueprint - Unattended Setup"
+        header_text="HACS Alexa Configurator - Unattended Setup"
     fi
 
     print_welcome_header "$header_text"
@@ -1398,18 +1398,18 @@ main() {
     remove_post_attach_script
 
     # Rename directory (do this before replacements to avoid double work)
-    rename_directory "custom_components/ha_integration_domain" "custom_components/$domain"
+    rename_directory "custom_components/alexa_configurator" "custom_components/$domain"
 
     echo ""
     print_color "$CYAN" "Step 2: Text replacements in remaining files..."
     echo ""
 
     # Replace domain
-    replace_in_files "ha_integration_domain" "$domain" "domain name"
+    replace_in_files "alexa_configurator" "$domain" "domain name"
 
     # Replace title (handle both cases)
-    replace_in_files "Integration Blueprint" "$title" "integration title"
-    replace_in_files "Integration blueprint" "$title" "integration title (lowercase)"
+    replace_in_files "Alexa Configurator" "$title" "integration title"
+    replace_in_files "Alexa Configurator" "$title" "integration title (lowercase)"
 
     # Replace namespace (class prefix)
     replace_in_files "IntegrationBlueprint" "$namespace" "class namespace prefix"

@@ -19,7 +19,7 @@ If not provided, ask for:
 
 ### 1. Create Platform Directory Structure
 
-**Directory:** `custom_components/ha_integration_domain/[platform]/`
+**Directory:** `custom_components/alexa_configurator/[platform]/`
 
 **Files to create:**
 
@@ -29,7 +29,7 @@ If not provided, ask for:
 ### 2. Platform `__init__.py` Template
 
 ```python
-"""[Platform] platform for Integration Blueprint."""
+"""[Platform] platform for Alexa Configurator."""
 
 from __future__ import annotations
 
@@ -65,7 +65,7 @@ async def async_setup_entry(
 ### 3. Entity Implementation Template
 
 ```python
-"""[Entity description] for Integration Blueprint."""
+"""[Entity description] for Alexa Configurator."""
 
 from __future__ import annotations
 
@@ -129,7 +129,7 @@ class IntegrationBlueprint[EntityName](
 
 ### 4. Update Manifest
 
-Add platform to `custom_components/ha_integration_domain/manifest.json`:
+Add platform to `custom_components/alexa_configurator/manifest.json`:
 
 ```json
 {
@@ -307,7 +307,7 @@ async def async_press(self) -> None:
 
 ## Integration Context
 
-- **Domain:** `ha_integration_domain`
+- **Domain:** `alexa_configurator`
 - **Class prefix:** `IntegrationBlueprint`
 - **Base entity:** `IntegrationBlueprintEntity` in `entity/base.py`
 - **Coordinator:** `IntegrationBlueprintDataUpdateCoordinator`

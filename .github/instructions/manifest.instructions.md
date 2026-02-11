@@ -4,7 +4,7 @@ applyTo: "**/manifest.json"
 
 # Manifest Instructions
 
-**Applies to:** `custom_components/ha_integration_domain/manifest.json`
+**Applies to:** `custom_components/alexa_configurator/manifest.json`
 
 ## Schema Validation
 
@@ -16,8 +16,8 @@ This schema combines Home Assistant's official manifest requirements with HACS-s
 
 ```json
 {
-  "domain": "ha_integration_domain",
-  "name": "Integration Blueprint",
+  "domain": "alexa_configurator",
+  "name": "Alexa Configurator",
   "codeowners": ["@jpawlowski"],
   "config_flow": true,
   "documentation": "https://github.com/jpawlowski/hacs.integration_blueprint",
